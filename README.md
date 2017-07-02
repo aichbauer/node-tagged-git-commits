@@ -3,7 +3,7 @@
 Get the commit hash and refs/tags of tagged commits, remote and local
 
 [![Build Status](https://travis-ci.org/aichbauer/node-tagged-git-commits.svg?branch=master)](https://travis-ci.org/aichbauer/node-tagged-git-commits)
-[![Build status](https://ci.appveyor.com/api/projects/status/f6bdyd0afwg1p36a?svg=true)](https://ci.appveyor.com/project/rudolfsonjunior/node-tagged-git-commits)
+[![Build status](https://ci.appveyor.com/api/projects/status/f6bdyd0afwg1p36a/branch/master?svg=true)](https://ci.appveyor.com/project/aichbauer/node-tagged-git-commits/branch/master)
 [![Coverage Status](https://coveralls.io/repos/github/aichbauer/node-tagged-git-commits/badge.svg?branch=master)](https://coveralls.io/github/aichbauer/node-tagged-git-commits?branch=master)
 
 ## Installation
