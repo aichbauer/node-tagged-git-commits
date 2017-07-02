@@ -27,7 +27,7 @@ const taggedGitCommits = ({ path, lookBehind, local, remote } = {}) => {
     if (thisLocal) {
       if (platform() === 'win32') {
         getCommitsExec = `pushd ${thisPath} & git show-ref`;
-        getTaggedCommitsExec = `pushd ${thisPath} & git for-each-ref --format='%(*committerdate:raw)%(committerdate:raw) %(refname) %(*objectname) %(objectname)' refs/tags --sort=-v:refname | awk '{ print $4, $3; }'`;
+        getTaggedCommitsExec = `pushd ${thisPath} & git for-each-ref --format="%(*committerdate:raw)%(committerdate:raw) %(refname) %(*objectname) %(objectname)" refs/tags --sort=-v:refname | awk "{ print $4, $3; }"`;
       } else {
         getCommitsExec = `(cd ${thisPath} ; git show-ref)`;
         getTaggedCommitsExec = `(cd ${thisPath} ; git for-each-ref --format='%(*committerdate:raw)%(committerdate:raw) %(refname) %(*objectname) %(objectname)' refs/tags --sort=-v:refname | awk '{ print $4, $3; }')`;
@@ -37,7 +37,7 @@ const taggedGitCommits = ({ path, lookBehind, local, remote } = {}) => {
     } else {
       if (platform() === 'win32') {
         getCommitsExec = `pushd ${thisPath} & git ls-remote ${thisRemote}`;
-        getTaggedCommitsExec = `pushd ${thisPath} & git for-each-ref --format='%(*committerdate:raw)%(committerdate:raw) %(refname) %(*objectname) %(objectname)' refs/tags --sort=-v:refname --merged=${thisRemote} | awk '{ print $4, $3; }'`;
+        getTaggedCommitsExec = `pushd ${thisPath} & git for-each-ref --format="%(*committerdate:raw)%(committerdate:raw) %(refname) %(*objectname) %(objectname)" refs/tags --sort=-v:refname --merged=${thisRemote} | awk "{ print $4, $3; }"`;
       } else {
         getCommitsExec = `(cd ${thisPath} ; git ls-remote)`;
         getTaggedCommitsExec = `(cd ${thisPath} ; git for-each-ref --format='%(*committerdate:raw)%(committerdate:raw) %(refname) %(*objectname) %(objectname)' refs/tags --sort=-v:refname --merged=${thisRemote} | awk '{ print $4, $3; }')`;
