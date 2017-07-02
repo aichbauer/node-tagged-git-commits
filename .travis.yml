@@ -6,9 +6,9 @@ node_js:
   - "6"
 install:
   - yarn
-script: npm test
 notifications:
   email:
     on_failure: change
+    on_success: change
 after_success:
   - npm run coveralls
