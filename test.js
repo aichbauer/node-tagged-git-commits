@@ -128,7 +128,7 @@ test('get tags from remote repository', (t) => {
   t.deepEqual(taggedCommit({
     path: 'test/fixtures/remote-tagged-1',
     local: false,
-    remote: 'origin/master',
+    remote: 'origin',
   }),
     [
       {
