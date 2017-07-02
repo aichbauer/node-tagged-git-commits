@@ -54,17 +54,19 @@ taggedCommits({
 });
 ```
 
-Returns an object.
+Returns an Array with objects.
 
 ```js
-{
-  commit: '31107b9051efe17e57c583937e027993860b11a9',
-  shortCommit: '31107b9',
-  hash: '31107b9051efe17e57c583937e027993860b11a9',
-  shortHash: '31107b9',
-  version: 'v1.0.0',
-  refsTags: 'refs/tags/v1.0.0'
-}
+[
+  {
+    commit: '31107b9051efe17e57c583937e027993860b11a9',
+    shortCommit: '31107b9',
+    hash: '31107b9051efe17e57c583937e027993860b11a9',
+    shortHash: '31107b9',
+    version: 'v1.0.0',
+   refsTags: 'refs/tags/v1.0.0',
+  },
+]
 ```
 
 ## LICENSE
