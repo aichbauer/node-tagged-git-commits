@@ -10,7 +10,7 @@ const cwd = process.cwd();
 // Escape bad arguments
 var escapeShell = function(cmd) {
   if(cmd !== undefined){
-    var arg = cmd.split(" ");
+    var arg = cmd.toString().split(" ");
     return shellescape(arg);
   }
 }
