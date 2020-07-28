@@ -3,8 +3,17 @@ import isGit from 'is-git-repository';
 import { platform } from 'os';
 import makepath from 'path';
 import pathIsAbsolute from 'path-is-absolute';
+import shellescape from 'shell-escape';
 
 const cwd = process.cwd();
+
+// Escape bad arguments
+var escapeShell = function(cmd) {
+  if(cmd !== undefined){
+    var arg = cmd.toString().split(" ");
+    return shellescape(arg);
+  }
+}
 
 const taggedGitCommits = ({ path, lookBehind, local, remote } = {}) => {
   let getCommits;
@@ -15,6 +24,12 @@ const taggedGitCommits = ({ path, lookBehind, local, remote } = {}) => {
   const thisLocal = local === undefined ? true : local;
   const thisRemote = remote || 'origin';
   const taggedCommits = [];
+  
+  // escaping bad shell args
+  thisPath = escapeShell(thisPath);
+  thisLookBehind = escapeShell(thisLookBehind);
+  thisLocal = escapeShell(thisLocal);
+  thisRemote = escapeShell(thisRemote);
 
   if (!isGit(thisPath)) {
     return [];
